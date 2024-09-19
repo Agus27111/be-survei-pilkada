@@ -48,8 +48,52 @@ const candidateSchema = Joi.object({
     })
 });
 
+const respondentSchema = Joi.object({
+    name: Joi.string().required().messages({
+        'any.required': 'Name is required',
+        'string.base': 'Name must be a string',
+    }),
+    age: Joi.number().integer().min(17).required().messages({
+        'any.required': 'Age is required',
+        'number.base': 'Age must be a number',
+        'number.integer': 'Age must be an integer',
+        'number.min': 'Age must be at least 17',
+    }),
+    gender: Joi.string().valid('male', 'female').required().messages({
+        'any.only': 'Gender must be either male or female',
+        'any.required': 'Gender is required',
+    }),
+    address: Joi.string().required().messages({
+        'any.required': 'Address is required',
+        'string.base': 'Address must be a string',
+    })
+
+});
+
+const surveysSchema = Joi.object({
+    candidate_id: Joi.number().integer().required().messages({
+        'any.required': 'Candidate id is required',
+        'number.base': 'Candidate id must be a number',
+        'number.integer': 'Candidate id must be an integer',
+    }),
+    respondent_id: Joi.number().integer().required().messages({
+        'any.required': 'Respondent id is required',
+        'number.base': 'Respondent id must be a number',
+        'number.integer': 'Respondent id must be an integer',
+    }),
+    response: Joi.string().messages({
+        'string.base': 'Response must be a string',
+        
+    })  
+
+});
+
+
+
 module.exports = {
     signinSchema,
     signupSchema,
-    candidateSchema
+    candidateSchema,
+    respondentSchema,
+    surveysSchema
 }

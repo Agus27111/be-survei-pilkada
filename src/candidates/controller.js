@@ -102,9 +102,9 @@ const updateCandidate = async (req, res, next ) => {
             throw error;
         }
 
-        await Model.update({ name, party, position }, { where: { id } }, { transaction: t });
+       const newCandidate =  await Model.update({ name, party, position }, { where: { id } }, { transaction: t });
         await t.commit();
-        return res.status(200).json({  success: true,  message: 'Candidate updated successfully', data: candidate });
+        return res.status(200).json({  success: true,  message: 'Candidate updated successfully', data: newCandidate });
         
     } catch (error) {
         t.rollback();
