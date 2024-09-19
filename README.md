@@ -30,3 +30,7 @@ Aplikasi ini mencakup fitur-fitur berikut:
    * **JWT** digunakan untuk mengamankan endpoint yang sensitif.
 6. **Pengelolaan Database (pg dan pg-hstore):**
    * **pg** dan **pg-hstore** digunakan sebagai dependensi PostgreSQL untuk berkomunikasi dengan database.
+
+Dokumentasi POSTMAN
+
+https://documenter.getpostman.com/view/27969319/2sAXqs7NUM
