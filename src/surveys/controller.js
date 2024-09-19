@@ -72,7 +72,7 @@ const results = async (req, res, next) => {
             ],
             group: ['candidate_id', 'candidate.id']
         });
-        console.log("🚀 ~ results ~ surveys:", surveys)
+   
 
         await t.commit();
    

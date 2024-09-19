@@ -13,10 +13,7 @@ Survey.belongsTo(Respondent, { foreignKey: 'respondent_id', as: 'respondent' });
 Candidate.hasMany(Survey, { foreignKey: 'candidate_id', as: 'surveys' });
 Survey.belongsTo(Candidate, { foreignKey: 'candidate_id', as: 'candidate' });
 
-// Log associations to verify
-console.log('Survey associations:', Survey.associations);
-console.log('Candidate associations:', Candidate.associations);
-console.log('Respondent associations:', Respondent.associations);
+
 
 module.exports = {
     Survey,
